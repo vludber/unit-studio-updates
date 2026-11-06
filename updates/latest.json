@@ -1,6 +1,6 @@
 {
-  "version": "0.9.0",
-  "url": "https://raw.githubusercontent.com/vludber/unit-studio-updates/main/updates/0.9.0.json",
-  "digest": "sha256:85a2d5e820db881eaa5d156327c70ff0d513c6715211c1fbfc8f005a4b619054",
-  "notes": "Версия 0.9: отдельный обычный и уникальный голос персонажа, подключение ElevenLabs, исправления KickBridge. Расширение KickBridge обновляется отдельно из полного архива программы."
+  "version": "0.10.0",
+  "url": "https://raw.githubusercontent.com/vludber/unit-studio-updates/main/updates/0.10.0.json",
+  "digest": "sha256:c8230978010b65335b8f923bc6f754be9fcf52d6faaf38a9748d96095b2dfa63",
+  "notes": "DonationAlerts Bridge: голос отправителя для каждого нового доната, автоматическая передача из вкладки виджета. После обновления установи отдельное расширение DonationAlertsBridge из полного архива 0.10 и подключи его на странице DonationAlerts. Первая версия, нужен новый тест."
 }
