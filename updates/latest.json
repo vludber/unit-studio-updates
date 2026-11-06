@@ -1,6 +1,6 @@
 {
-  "version": "0.10.2",
-  "url": "https://raw.githubusercontent.com/vludber/unit-studio-updates/main/updates/0.10.2.json",
-  "digest": "sha256:d43c62abf4f471925f15b5333eb78cb8c27a7d0c44db45339fe22653751990b7",
-  "notes": "Исправлена передача озвучки после простоя вкладки: каждый донат проверяет связь сам. Программа обновляет стандартную папку DonationAlertsBridge рядом с собой, сохраняя резервную копию. После установки открой chrome://extensions и нажми ↻ у DonationAlerts Bridge; затем обнови вкладку виджета, панель Unit Studio и источник Unit Studio в OBS. Код подключения сохраняется. В блоке DonationAlerts должно быть «Расширение 0.10.2 работает». Если папка не найдена или изменена, страница покажет это. Добавлены причины отклонения донатов и диагностика воспроизведения."
+  "version": "0.10.3",
+  "url": "https://raw.githubusercontent.com/vludber/unit-studio-updates/main/updates/0.10.3.json",
+  "digest": "sha256:647b657bded08177efde243549ba364fa4e44df4d964a82379687c8afcf581ec",
+  "notes": "Звук DonationAlerts теперь играет в оверлее OBS. Включите «Управлять звуком через OBS» в свойствах источника Unit Studio. Исправлено долгое ожидание без аудио. Папку установленного расширения можно выбрать в разделе DonationAlerts: программа обновит её и запомнит путь. После обновления нажмите ↻ у расширения в Chrome и обновите виджет и источник OBS."
 }
