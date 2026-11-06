@@ -1,6 +1,6 @@
 {
-  "version": "0.10.0",
-  "url": "https://raw.githubusercontent.com/vludber/unit-studio-updates/main/updates/0.10.0.json",
-  "digest": "sha256:c8230978010b65335b8f923bc6f754be9fcf52d6faaf38a9748d96095b2dfa63",
-  "notes": "DonationAlerts Bridge: голос отправителя для каждого нового доната, автоматическая передача из вкладки виджета. После обновления установи отдельное расширение DonationAlertsBridge из полного архива 0.10 и подключи его на странице DonationAlerts. Первая версия, нужен новый тест."
+  "version": "0.10.1",
+  "url": "https://raw.githubusercontent.com/vludber/unit-studio-updates/main/updates/0.10.1.json",
+  "digest": "sha256:d2c06ea296353be1c38fb6a3217786ca99f12b98145be39e574ef408c58b4eed",
+  "notes": "Исправлено появление персонажа при донате с голосом DonationAlerts. Рот двигается только во время воспроизведения, уход — после окончания звука. Задержанная озвучка прикрепляется к тому же донату без второго персонажа. При ошибке остаётся текст без имитации речи. Поддержаны MP3/WAV и полные ответы 206. Расширение 0.10 переустанавливать не нужно. После обновления обнови панель Unit Studio и браузерный источник Unit Studio в OBS."
 }
