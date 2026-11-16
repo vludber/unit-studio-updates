@@ -11,8 +11,8 @@ Read README.md before publishing updates.
 - Commit chunks, request, and any transport changes atomically. Only the final
   main ref update should trigger publication. Never update latest.json early.
 - A release must already be built, tested, signed, and durably saved before
-  publication. This repository does not contain an unpublished 0.14.0 build.
-  Do not claim that a build survived another chat without opening its file.
+  publication. Check previous working directories as well as saved archives
+  before declaring an unpublished build missing. Open and verify the actual file.
 - Preserve the release signature. Do not put signing keys, private voice
   recordings, donor details, tokens, or local user settings in this repository.
 - Verify the GitHub Actions result and the published package/index before

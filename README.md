@@ -42,9 +42,11 @@ Integrity checks reject modified chunks, a changed base, a mismatched target,
 an invalid index, a downgrade, or overwriting a release. Transport SHA checks
 preserve signed bytes; they do not replace the updater's signature validation.
 
-The initial request only reconstructs the existing 0.13.0 package. It does not
-release 0.14.0. That unpublished build was not available when this workflow was
-added.
+The initial verification rebuilt 0.13.0 without changing the release channel.
+The original signed 0.14.0 build was subsequently recovered from a previous
+working directory. Its signature, per-file hashes, installation over 0.13.0,
+voice queue, shared profiles, and settings preservation were checked before
+preparing its publication. GPU generation speed must be measured on the user's PC.
 
 ## Tests
 

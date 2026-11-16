@@ -112,9 +112,14 @@ def prepare(root, base, target, latest=None):
         if text and len(text.encode("utf-8")) <= 512:
             parts.append(["inline", text])
             return
-        # At most four UTF-8 bytes per character.
-        for i in range(0, len(text), 4096):
-            parts.append(["text", store_chunk(root, text[i:i+4096].encode("utf-8"))])
+        data, start = text.encode("utf-8"), 0
+        while start < len(data):
+            end = min(start + LIMIT, len(data))
+            # Keep complete UTF-8 code points in each independently decoded chunk.
+            while end < len(data) and data[end] & 0xC0 == 0x80:
+                end -= 1
+            parts.append(["text", store_chunk(root, data[start:end])])
+            start = end
     for name, (a, b) in new_files.items():
         previous = old_files.get(name)
         if previous and old[previous[0]:previous[1]] == new[a:b]:
