@@ -1,0 +1,42 @@
+name: Publish signed update from small files
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - publishing/request.json
+      - tools/release_transport.py
+      - tools/test_release_transport.py
+      - .github/workflows/publish-update.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: unit-studio-publication
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - name: Test transport and integrity guards
+        run: python3 -m unittest discover -s tools -p 'test_*.py' -v
+      - name: Reconstruct and verify original signed bytes
+        run: python3 tools/release_transport.py apply
+      - name: Commit release and index together
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- updates && [ -z "$(git ls-files --others --exclude-standard updates)" ]; then
+            echo 'Verification only or already published; release channel unchanged.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- updates
+          git commit -m 'Publish verified signed Unit Studio update'
+          git push origin HEAD:main
